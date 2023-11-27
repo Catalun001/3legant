@@ -1,9 +1,22 @@
-import React from "react";
-
-// components
+//libraries
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+//components
 import Notification from "../Notification/Notification";
+import Drawer from "../Drawer/Drawer";
 
 const Header = () => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const location = useLocation();
+
+  const openDrawer = () => {
+    setIsDrawerOpen(true);
+  };
+
+  const closeDrawer = () => {
+    setIsDrawerOpen(false);
+  };
+
   return (
     <div className="cont">
       <Notification />
@@ -13,39 +26,63 @@ const Header = () => {
           <div className="font-pop text-2xl font-medium leading-6 text-[#6C7275]">
             .
           </div>
-        </div>
+        </div>{" "}
+        {/* active - #14171, not-active -#6C7275  */}
         <div className="middle-header   ">
           <ul className="links flex gap-10 ">
-            {/* active - #14171, not-active -#6C7275  */}
-            <li className="font-spa text-sm font-medium text-[#6C7275]">
-              <a href="#">Home</a>
+            <li
+              className={`font-spa text-sm font-medium ${
+                location.pathname === "/" ? "text-[#14171]" : "text-[#6C7275]"
+              }`}
+            >
+              <Link to="/">Home</Link>
             </li>
-            <li className="font-spa text-sm font-medium text-[#6C7275]  ">
-              <a href="#">Shop</a>
+            <li
+              className={`font-spa text-sm font-medium ${
+                location.pathname === "/shop"
+                  ? "text-[#14171]"
+                  : "text-[#6C7275]"
+              }`}
+            >
+              <Link to="/shop">Shop</Link>
             </li>
-            <li className="font-spa text-sm font-medium text-[#6C7275] ">
-              <a href="#">Product</a>
+            <li
+              className={`font-spa text-sm font-medium ${
+                location.pathname === "/product"
+                  ? "text-[#14171]"
+                  : "text-[#6C7275]"
+              }`}
+            >
+              <Link to="/privacy-policy">Privacy Policy</Link>
             </li>
-            <li className="font-spa text-sm font-medium text-[#6C7275] ">
-              <a href="#">Contact Us</a>
+            <li
+              className={`font-spa text-sm font-medium ${
+                location.pathname === "/contact-us"
+                  ? "text-[#14171]"
+                  : "text-[#6C7275]"
+              }`}
+            >
+              <Link to="/contact-us">Contact Us</Link>
             </li>
           </ul>
         </div>
         <div className="right-header flex items-center gap-4">
-          <div className="search">
-            <img src="src\assets\search.png"></img>
-          </div>
           <div className="account">
             <img src="src\assets\user.png"></img>
           </div>
-          <div className="shopping-bag flex items-center">
-            <img src="src\assets\bag.png"></img>
+          <div
+            className="shopping-bag flex items-center cursor-pointer"
+            onClick={openDrawer}
+          >
+            <img src="src\assets\bag.png" alt="Shopping Bag" />
             <div className="bullet w-5 h-5 bg-black text-white flex items-center justify-center rounded-full">
               <div className="text font-int text-xs font-bold">0</div>
             </div>
           </div>
         </div>
       </div>
+      
+      {isDrawerOpen && <Drawer closeDrawer={closeDrawer} />}
     </div>
   );
 };

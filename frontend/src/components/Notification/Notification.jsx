@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Notification = () => {
   return (
     <div className="notification flex gap-3 items-center justify-center bg-[#F3F5F7] h-10 ">
@@ -11,7 +11,7 @@ const Notification = () => {
       </div>
       <div className="2text text-[#377DFF] font-int font-medium text-sm border-b border-[#377DFF] ">
         <div className="content flex items-center max-sm:text-xs">
-          <a href="#">Shop Now</a>
+          <Link to="/shop">Shop Now</Link>
           <img src="src\assets\arrow-right.png" alt="" />
         </div>
       </div>

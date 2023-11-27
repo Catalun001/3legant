@@ -1,5 +1,5 @@
 import React from "react";
-import { Splide, SplideSlide, SplideTrack} from "@splidejs/react-splide";
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 const Hero = () => {
   return (
@@ -27,7 +27,7 @@ const Hero = () => {
         </SplideTrack>
         <div className="splide__arrows">
           <button className="splide__arrow splide__arrow--prev  ">
-            <img src="/src/assets/arrow-left.svg"  />
+            <img src="/src/assets/arrow-left.svg" />
           </button>
           <button className="splide__arrow splide__arrow--next">
             <img src="/src/assets/arrow-right.svg" />
