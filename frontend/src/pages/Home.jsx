@@ -1,6 +1,5 @@
 // libraries
 import React from "react";
-import Header from ".././components/Header/Header";
 import { Link } from "react-router-dom";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 //components
@@ -10,13 +9,14 @@ import MiniCard from ".././components/MiniCard/MiniCard";
 import MacroCard from ".././components/MacroCard/MacroCard";
 import Banner from ".././components/Banner/Banner";
 import Articles from ".././components/Articles/Articles";
-import Footer from ".././components/Footer/Footer";
+
 import Newsletter from ".././components/Newsletter/Newsletter";
+
 
 const App = () => {
   return (
     <div className="home">
-      <Header />
+      
       <Hero />
       <Cards />
       <div className="new flex-col items-center justify-between mt-14 mx-40">
@@ -51,6 +51,7 @@ const App = () => {
                 image="/src/assets/sofa.png"
                 price={1200}
                 oldPrice={1700}
+                newTag
               />
             </SplideSlide>
             <SplideSlide>
@@ -67,6 +68,7 @@ const App = () => {
                 image="/src/assets/sofa.png"
                 price={1200}
                 oldPrice={1700}
+                newTag
               />
             </SplideSlide>
             <SplideSlide>
@@ -83,6 +85,7 @@ const App = () => {
                 image="/src/assets/sofa.png"
                 price={1200}
                 oldPrice={1700}
+                newTag
               />
             </SplideSlide>
             <SplideSlide>
@@ -91,6 +94,7 @@ const App = () => {
                 image="/src/assets/sofa.png"
                 price={1200}
                 oldPrice={1700}
+                newTag
               />
             </SplideSlide>
             <SplideSlide>
@@ -99,6 +103,7 @@ const App = () => {
                 image="/src/assets/sofa.png"
                 price={1200}
                 oldPrice={1700}
+                newTag
               />
             </SplideSlide>
             <SplideSlide>
@@ -107,6 +112,7 @@ const App = () => {
                 image="/src/assets/sofa.png"
                 price={1200}
                 oldPrice={1700}
+                newTag
               />
             </SplideSlide>
           </Splide>
@@ -139,7 +145,7 @@ const App = () => {
       <Banner />
       <Articles />
       <Newsletter />
-      <Footer />
+      
     </div>
   );
 };

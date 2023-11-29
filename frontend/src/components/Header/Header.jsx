@@ -26,9 +26,9 @@ const Header = () => {
           <div className="font-pop text-2xl font-medium leading-6 text-[#6C7275]">
             .
           </div>
-        </div>{" "}
+        </div>
         {/* active - #14171, not-active -#6C7275  */}
-        <div className="middle-header   ">
+        <div className="middle-header">
           <ul className="links flex gap-10 ">
             <li
               className={`font-spa text-sm font-medium ${
@@ -67,6 +67,11 @@ const Header = () => {
           </ul>
         </div>
         <div className="right-header flex items-center gap-4">
+          <div className="heart">
+            <a href="">
+              <img src="src\assets\Heart.png" alt="" />
+            </a>
+          </div>
           <div className="account">
             <img src="src\assets\user.png"></img>
           </div>
@@ -81,7 +86,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      
+
       {isDrawerOpen && <Drawer closeDrawer={closeDrawer} />}
     </div>
   );

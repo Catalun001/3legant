@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 
-const MiniCard = ({ product, image, price, oldPrice }) => {
+const MiniCard = ({
+  product,
+  image,
+  price,
+  oldPrice = "",
+  newTag = 0,
+  rating,
+}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const cardStyle = {
     backgroundImage: `url(${image})`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
     objectFit: "cover",
     height: "349px",
     width: "262px",
@@ -28,12 +36,16 @@ const MiniCard = ({ product, image, price, oldPrice }) => {
       >
         <div className="header-card flex justify-between">
           <div className="left-header flex-col">
-            <div className="rounded-md flex justify-center items-center new-tag text-base font-int bg-white font-bold text-[#141718] px-3 py-1">
-              NEW
-            </div>
-            <div className="rounded-md sale-tag text-base font-int mt-2 bg-[#38CB89] font-bold text-white px-3 py-1">
-              -{sale}%
-            </div>
+            {newTag != 0 && (
+              <div className="rounded-md flex justify-center items-center new-tag text-base font-int bg-white font-bold text-[#141718] px-3 py-1">
+                NEW
+              </div>
+            )}
+            {oldPrice != "" && (
+              <div className="rounded-md sale-tag text-base font-int mt-2 bg-[#38CB89] font-bold text-white px-3 py-1">
+                -{sale}%
+              </div>
+            )}
           </div>
         </div>
         <div
@@ -41,7 +53,7 @@ const MiniCard = ({ product, image, price, oldPrice }) => {
             isHovered ? "visible opacity-100" : "invisible opacity-0"
           } transition-all duration-400 ease-in-out`}
         >
-         <a href="">Add to cart</a>
+          <a href="">Add to cart</a>
         </div>
       </div>
       <div className="description mt-3 flex-col">
@@ -57,12 +69,14 @@ const MiniCard = ({ product, image, price, oldPrice }) => {
         </div>
         <div className="prices flex gap-3 items-center mt-1">
           <div className="price font-int font-semibold text-sm">${price}</div>
-          <div
-            className="oldprice font-int font-normal text-sm text-[#6C7275]"
-            style={{ textDecorationLine: "line-through" }}
-          >
-            ${oldPrice}
-          </div>
+          {oldPrice != "" && (
+            <div
+              className="oldprice font-int font-normal text-sm text-[#6C7275]"
+              style={{ textDecorationLine: "line-through" }}
+            >
+              ${oldPrice}
+            </div>
+          )}
         </div>
       </div>
     </div>
