@@ -7,7 +7,7 @@ import "./index.css";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import ContactUs from "./pages/ContactUs";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Blog from "./pages/Blog";
 // components
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -19,7 +19,7 @@ const App = () => {
         <Route path="/" element={<Home />}></Route>
         <Route path="/shop" element={<Shop />}></Route>
         <Route path="/contact-us" element={<ContactUs />}></Route>
-        <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
+        <Route path="/blog" element={<Blog />}></Route>
       </Routes>
       <Footer />
     </div>

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const HeroShop = () => {
+const HeroShop = ({page, image, title,description}) => {
   const cardStyle = {
-    backgroundImage: "url(/src/assets/heroimage.png)",
+    backgroundImage: `url(${image})`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -10,7 +10,7 @@ const HeroShop = () => {
   return (
     <div className="Hero">
       <div
-        className="HeroBg flex-col items-center justify-center py-28 mx-48"
+        className="HeroBg flex flex-col items-center justify-center py-28 mx-48"
         style={cardStyle}
       >
         <div className="categories  flex items-center justify-center gap-4">
@@ -19,11 +19,14 @@ const HeroShop = () => {
             <img src="/src/assets/chevron-right.png" alt="" />
           </div>
           <div className="text-[#121212] font-int font-medium text-sm">
-            Shop
+            {page}
           </div>
         </div>
         <div className="title font-pop text-[54px] font-medium text-black flex items-center justify-center">
-          Shop Page
+          {title}
+        </div>
+        <div className="description text-[#121212] font-int text-xl font-normal">
+        {description}
         </div>
       </div>
     </div>

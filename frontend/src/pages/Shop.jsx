@@ -18,7 +18,12 @@ const App = () => {
   return (
     <div className="home  ">
       <div className="content ">
-        <HeroShop />
+        <HeroShop
+          image="/src/assets/heroimage.png"
+          title="Shop Page"
+          page="Shop"
+          description="Let’s design the place you always imagined."
+        />
         <div className="mx-48 py-14 flex justify-between ">
           <div className="left filters flex flex-col  w-[35vw]">
             <div className="header flex items-center gap-2">

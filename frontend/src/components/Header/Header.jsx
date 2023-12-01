@@ -53,7 +53,7 @@ const Header = () => {
                   : "text-[#6C7275]"
               }`}
             >
-              <Link to="/privacy-policy">Privacy Policy</Link>
+              <Link to="/blog">Our Blog</Link>
             </li>
             <li
               className={`font-spa text-sm font-medium ${
