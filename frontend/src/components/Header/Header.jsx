@@ -19,8 +19,14 @@ const Header = () => {
 
   return (
     <div className="cont">
-      <Notification />
-      <div className="py-4  header flex items-center justify-between mx-48">
+      {location.pathname != "/cart" &&
+      location.pathname != "/blog" &&
+      location.pathname != "/contact-us" &&
+      location.pathname != "/checkout" ? (
+        <Notification />
+      ) : null}
+
+      <div className="py-5  header flex items-center justify-between mx-48">
         <div className="left-header font-pop text-2xl font-medium  leading-6 text-black flex items-center ">
           3legant
           <div className="font-pop text-2xl font-medium leading-6 text-[#6C7275]">

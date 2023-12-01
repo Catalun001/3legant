@@ -1,21 +1,16 @@
 import React from 'react'
 
-const DrawerItem = ({image,title,color,price, p=0}) => {
-
-   const descriptionStyle = {
-     paddingRight: `${p}rem`, // Use the p prop to set the padding
-   };
-  price = parseFloat(price).toFixed(2);
+const Order = ({ image, title, color, price }) => {
   return (
     <div className="item flex py-6">
       <div className="image">
         <img src={image} alt="" />
       </div>
-      <div className="description ml-4 mr-auto p" style={descriptionStyle}>
+      <div className="description ml-4 mr-auto">
         <div className="title text-[#141718] font-int text-sm font-semibold">
           {title}
         </div>
-        <div className="color text-[#6C7275] font-int text-sm my-2 font-normal">
+        <div className="color text-[#6C7275] font-int text-xs my-2 font-normal">
           Color: {color}
         </div>
         <div className="quantity w-[90px]  "></div>
@@ -30,6 +25,6 @@ const DrawerItem = ({image,title,color,price, p=0}) => {
       </div>
     </div>
   );
-}
+};
 
-export default DrawerItem
+export default Order

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const Check = ({ name }) => {
-  const [isChecked, setIsChecked] = useState(false);
+const Check = ({ name , state=0}) => {
+  const [isChecked, setIsChecked] = useState(state);
 
   const checkboxChange = () => {
     setIsChecked(!isChecked);

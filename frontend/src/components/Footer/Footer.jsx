@@ -24,9 +24,7 @@ const Footer = () => {
               <div className="">
                 <Link to="/shop">Shop</Link>
               </div>
-              <div className="">
-                <Link to="/product">Product</Link>
-              </div>
+              
               <div className="">
                 <Link to="/blog">Blog</Link>
               </div>

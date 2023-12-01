@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Article = ({ image, title }) => {
   return (
     <div className="article ">
@@ -12,7 +12,7 @@ const Article = ({ image, title }) => {
         </div>
         <div className="2text mt-2 text-black inline-flex font-int font-medium text-base border-b border-black ">
           <div className="content flex items-center text-base font-medium">
-            <a href="#">Read More</a>
+            <Link to="/blog">Read More</Link>
             <img src="src\assets\arrow-right1.png" alt="" />
           </div>
         </div>
