@@ -1,10 +1,9 @@
-import React from 'react'
-
-const DrawerItem = ({image,title,color,price, p=0}) => {
-
-   const descriptionStyle = {
-     paddingRight: `${p}rem`, // Use the p prop to set the padding
-   };
+import React from "react";
+import Quantity from "../Quantity/Quantity";
+const DrawerItem = ({ image, title, color, price, p = 0 }) => {
+  const descriptionStyle = {
+    paddingRight: `${p}rem`, // Use the p prop to set the padding
+  };
   price = parseFloat(price).toFixed(2);
   return (
     <div className="item flex py-6">
@@ -18,7 +17,9 @@ const DrawerItem = ({image,title,color,price, p=0}) => {
         <div className="color text-[#6C7275] font-int text-sm my-2 font-normal">
           Color: {color}
         </div>
-        <div className="quantity w-[90px]  "></div>
+        <div className="quantity w-[90px]  ">
+          <Quantity />
+        </div>
       </div>
       <div className="deleteAndPrice  flex flex-col  justify-start items-end ">
         <div className="price text-[#121212] font-int text-sm font-semibold">
@@ -30,6 +31,6 @@ const DrawerItem = ({image,title,color,price, p=0}) => {
       </div>
     </div>
   );
-}
+};
 
-export default DrawerItem
+export default DrawerItem;

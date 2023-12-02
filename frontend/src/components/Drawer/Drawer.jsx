@@ -6,7 +6,9 @@ const Drawer = ({ closeDrawer }) => {
     <div className="drawer fixed top-0 right-0 h-full w-80 bg-white shadow z-10 py-14 px-6 ">
       <div className="header flex items-center justify-between">
         <div className="title text-[#121212] font-pop text-3xl">Cart</div>
-        <button onClick={closeDrawer}><img src="" alt="" /></button>
+        <button onClick={closeDrawer}>
+          <img src="\src\assets\x-removebg-preview.png" alt="" className="w-5" />
+        </button>
       </div>
       <div className="flex flex-col justify-between h-full">
         <div className="cartItems overflow-y-auto flex-col items-center justify-center mt-4 z-10 overflow-hidden">

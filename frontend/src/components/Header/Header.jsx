@@ -22,6 +22,7 @@ const Header = () => {
       {location.pathname != "/cart" &&
       location.pathname != "/blog" &&
       location.pathname != "/contact-us" &&
+      location.pathname != "/success" &&
       location.pathname != "/checkout" ? (
         <Notification />
       ) : null}
@@ -54,7 +55,7 @@ const Header = () => {
             </li>
             <li
               className={`font-spa text-sm font-medium ${
-                location.pathname === "/product"
+                location.pathname === "/blog"
                   ? "text-[#14171]"
                   : "text-[#6C7275]"
               }`}

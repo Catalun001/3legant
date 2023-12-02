@@ -38,12 +38,11 @@ const Blog = () => {
             >
               <Option value="ascending">By Date to newest</Option>
               <Option value="descending">By Date to oldest</Option>
-              
             </Select>
           </div>
         </div>
 
-        <div className="cards flex flex-wrap gap-[2vw] pt-10 pb-20">
+        <div className="cards flex flex-wrap gap-[1.5vw] pt-10 pb-20">
           <BlogCard
             title="7 ways to decor your home like a professional"
             date="October 16, 2023"

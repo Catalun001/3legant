@@ -4,9 +4,9 @@ import CartSum from "../components/CartSum/CartSum";
 import Coupon from "../components/Coupon/Coupon";
 const ViewCart = () => {
   return (
-    <div className="viewcart">
-      <div className="container mx-48 my-20">
-        <div className="flex flex-col items-center justify-center gap-10">
+    <div className="viewcart mx-48">
+      <div className="container  my-10 flex-col items-center justify-center gap-10">
+        <div className="flex flex-col items-center justify-center gap-10 ">
           <div className="title text-black font-pop text-5xl">Cart</div>
           <div className="steps flex items-center justify-center gap-10">
             <div className="step1 flex items-center gap-4 border-b-2 border-[#141718] pb-6">
