@@ -1,6 +1,6 @@
 // libraries
 import React from "react";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 //tailwind
 import "./index.css";
 //pages
@@ -11,6 +11,8 @@ import Blog from "./pages/Blog";
 import ViewCart from "./pages/ViewCart";
 import Checkout from "./pages/Checkout";
 import Success from "./pages/Success";
+import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
 // components
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -27,6 +29,8 @@ const App = () => {
         <Route path="/cart" element={<ViewCart />}></Route>
         <Route path="/checkout" element={<Checkout />}></Route>
         <Route path="/success" element={<Success />}></Route>
+        <Route path="/sign-in" element={<SignIn />}></Route>
+        <Route path="/sign-up" element={<SignUp />}></Route>
       </Routes>
       <Footer />
     </div>

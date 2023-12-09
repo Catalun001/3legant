@@ -24,10 +24,10 @@ const Newsletter = () => {
         Join Our Newsletter
       </div>
 
-      <div className="description text-[#141718] text-xl font-normal flex items-center justify-center">
+      <div className="description text-[#141718] text-xl font-normal flex items-center justify-center mt-3">
         Sign up for deals, new products, and promotions
       </div>
-      <div className="input flex items-center justify-center ">
+      <div className="input4 flex items-center justify-center ">
         <Box sx={{ "& > :not(style)": { m: 1 } }}>
           <Box sx={{ display: "flex", alignItems: "flex-end" }}>
             <MailOutlineIcon sx={{ color: "action.active", mr: 1, my: 0.5 }} />
@@ -36,6 +36,7 @@ const Newsletter = () => {
                 id="input-with-sx"
                 label="Email address"
                 variant="standard"
+                className="w-80"
               />
             </div>
             <Button variant="text ">

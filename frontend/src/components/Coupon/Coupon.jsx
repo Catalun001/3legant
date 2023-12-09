@@ -14,8 +14,12 @@ const Coupon = () => {
           <div className="image">
             <img src="/src/assets/ticket.png" alt="" />
           </div>
-          <div className="input">
-            <input type="text" placeholder="Coupon Code" />
+          <div className="input2">
+            <input
+              type="text"
+              placeholder="Coupon Code"
+              className="focus:outline-none"
+            />
           </div>
         </div>
         <div className="button">
