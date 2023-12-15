@@ -8,7 +8,7 @@ const DrawerItem = ({ image, title, color, price, p = 0 }) => {
   return (
     <div className="item flex py-6">
       <div className="image">
-        <img src={image} alt="" />
+        <img src={image} alt="" className="object-fit h-20- w-20" />
       </div>
       <div className="description ml-4 mr-auto p" style={descriptionStyle}>
         <div className="title text-[#141718] font-int text-sm font-semibold">

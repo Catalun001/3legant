@@ -7,44 +7,48 @@ const Drawer = ({ closeDrawer }) => {
       <div className="header flex items-center justify-between">
         <div className="title text-[#121212] font-pop text-3xl">Cart</div>
         <button onClick={closeDrawer}>
-          <img src="\src\assets\x-removebg-preview.png" alt="" className="w-5" />
+          <img
+            src="\src\assets\x-removebg-preview.png"
+            alt=""
+            className="w-5"
+          />
         </button>
       </div>
       <div className="flex flex-col justify-between h-full">
         <div className="cartItems overflow-y-auto flex-col items-center justify-center mt-4 z-10 overflow-hidden">
           <DrawerItem
-            image="src\assets\scaun.png"
+            image="\src\assets\chair.png"
             title="Tray Table"
             color="Black"
             price={20.99}
           />
           <DrawerItem
-            image="src\assets\scaun.png"
+            image="\src\assets\chair.png"
             title="Tray Table"
             color="Black"
             price={20.99}
           />
           <DrawerItem
-            image="src\assets\scaun.png"
+            image="\src\assets\chair3.png"
             title="Tray Table"
             color="Black"
             price={20.99}
           />
           <DrawerItem
-            image="src\assets\scaun.png"
+            image="\src\assets\order.png"
             title="Tray Table"
             color="Black"
             price={20.99}
           />
 
           <DrawerItem
-            image="src\assets\scaun.png"
+            image="src\assets\order.png"
             title="Tray Table"
             color="Black"
             price={20.99}
           />
           <DrawerItem
-            image="src\assets\scaun.png"
+            image="src\assets\order.png"
             title="Tray Table"
             color="Black"
             price={20.99}

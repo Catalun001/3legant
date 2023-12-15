@@ -6,7 +6,7 @@ const Hero = () => {
     <div className="flex-col items-center justify-center mx-48">
       <Splide
         hasTrack={false}
-        aria-label="My Favorite Images"
+        
         className="flex items-center justify-center"
       >
         <SplideTrack>

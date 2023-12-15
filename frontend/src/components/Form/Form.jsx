@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Form.css";
 const Form = () => {
   return (
@@ -35,11 +36,17 @@ const Form = () => {
               type="text"
               id="message"
               placeholder="Your message"
-              style={{ width: "60vh",height: "20vh" }}
-              
+              style={{ width: "60vh", height: "20vh" }}
               required
             />
           </div>
+        </div>
+        <div className="w-full">
+          <input
+            type="submit"
+            value="Send"
+            className="w-1/2 bg-[#141718] py-3 px-6 flex items-center justify-center text-white font-int text-xl font-medium rounded-md"
+          ></input>
         </div>
       </div>
     </form>

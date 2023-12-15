@@ -9,8 +9,7 @@ import Select, { selectClasses } from "@mui/joy/Select";
 import Option from "@mui/joy/Option";
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 
-const categories = [{ label: "Living Room" }, { label: "Kitchen" }];
-const prices = [{ label: "Over $1000" }, { label: "Under $1000" }];
+
 const App = () => {
   return (
     <div className="home  ">
@@ -191,7 +190,19 @@ const App = () => {
                 product="Living Room"
                 image="/src/assets/sofa.png"
                 price={1200}
+                id={1}
                 oldPrice={1700}
+                rating={4}
+                newTag
+              />
+
+              <MiniCard
+                product="Living Room"
+                image="/src/assets/sofa.png"
+                price={1200}
+                oldPrice={1700}
+                id={2}
+                rating={4}
                 newTag
               />
               <MiniCard
@@ -199,12 +210,15 @@ const App = () => {
                 image="/src/assets/sofa.png"
                 price={1200}
                 oldPrice={1700}
+                id={3}
+                rating={4}
                 newTag
               />
               <MiniCard
                 product="Living Room"
                 image="/src/assets/sofa.png"
                 price={1200}
+                id={4}
                 oldPrice={1700}
                 newTag
               />
@@ -212,6 +226,16 @@ const App = () => {
                 product="Living Room"
                 image="/src/assets/sofa.png"
                 price={1200}
+                id={5}
+                oldPrice={1700}
+                rating={4}
+                newTag
+              />
+              <MiniCard
+                product="Living Room"
+                image="/src/assets/sofa.png"
+                price={1200}
+                id={6}
                 oldPrice={1700}
                 newTag
               />
@@ -219,20 +243,7 @@ const App = () => {
                 product="Living Room"
                 image="/src/assets/sofa.png"
                 price={1200}
-                oldPrice={1700}
-                newTag
-              />
-              <MiniCard
-                product="Living Room"
-                image="/src/assets/sofa.png"
-                price={1200}
-                oldPrice={1700}
-                newTag
-              />
-              <MiniCard
-                product="Living Room"
-                image="/src/assets/sofa.png"
-                price={1200}
+                id={7}
                 oldPrice={1700}
                 newTag
               />

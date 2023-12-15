@@ -25,13 +25,14 @@ const Header = () => {
       location.pathname !== "/success" &&
       location.pathname !== "/sign-in" &&
       location.pathname !== "/sign-up" &&
-      location.pathname !== "/checkout" ? (
+      location.pathname !== "/checkout" &&
+      location.pathname !== "/product/:id" ? (
         <Notification />
       ) : null}
       {location.pathname !== "/sign-in" && location.pathname !== "/sign-up" ? (
         <div className="py-5 header flex items-center justify-between mx-48">
           <div className="left-header font-pop text-2xl font-medium leading-6 text-black flex items-center">
-           <Link to="/">3legant</Link>
+            <Link to="/">3legant</Link>
             <div className="font-pop text-2xl font-medium leading-6 text-[#6C7275]">
               .
             </div>
@@ -78,19 +79,19 @@ const Header = () => {
           <div className="right-header flex items-center gap-4">
             <div className="heart">
               <a href="">
-                <img src="src\assets\Heart.png" alt="" />
+                <img src="\src\assets\Heart.png" alt="" />
               </a>
             </div>
             <div className="account">
               <Link to="/sign-up">
-                <img src="src\assets\user.png" alt="User" />
+                <img src="\src\assets\user.png" alt="User" />
               </Link>
             </div>
             <div
               className="shopping-bag flex items-center cursor-pointer"
               onClick={openDrawer}
             >
-              <img src="src\assets\bag.png" alt="Shopping Bag" />
+              <img src="\src\assets\bag.png" alt="Shopping Bag" />
               <div className="bullet w-5 h-5 bg-black text-white flex items-center justify-center rounded-full">
                 <div className="text font-int text-xs font-bold">0</div>
               </div>

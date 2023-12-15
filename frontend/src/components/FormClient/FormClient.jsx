@@ -2,6 +2,7 @@ import React from "react";
 import "./FormClient.css";
 import { Link } from "react-router-dom";
 const FormClient = () => {
+  
   return (
     <div className="formclient inline-flex flex-col gap-6">
       <div className="content flex flex-col gap-6">

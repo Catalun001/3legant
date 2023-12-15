@@ -16,7 +16,6 @@ import Newsletter from ".././components/Newsletter/Newsletter";
 const App = () => {
   return (
     <div className="home">
-      
       <Hero />
       <Cards />
       <div className="new flex-col items-center justify-between mt-14 mx-40">
@@ -47,6 +46,7 @@ const App = () => {
           >
             <SplideSlide>
               <MiniCard
+                id={1}
                 product="Living Room"
                 image="/src/assets/sofa.png"
                 price={1200}
@@ -56,6 +56,7 @@ const App = () => {
             </SplideSlide>
             <SplideSlide>
               <MiniCard
+                id={1}
                 product="Living Room"
                 image="/src/assets/lamo.png"
                 price={1200}
@@ -64,6 +65,7 @@ const App = () => {
             </SplideSlide>
             <SplideSlide>
               <MiniCard
+                id={1}
                 product="Living Room"
                 image="/src/assets/sofa.png"
                 price={1200}
@@ -73,6 +75,7 @@ const App = () => {
             </SplideSlide>
             <SplideSlide>
               <MiniCard
+                id={1}
                 product="Living Room"
                 image="/src/assets/sofa.png"
                 price={1200}
@@ -81,15 +84,7 @@ const App = () => {
             </SplideSlide>
             <SplideSlide>
               <MiniCard
-                product="Living Room"
-                image="/src/assets/sofa.png"
-                price={1200}
-                oldPrice={1700}
-                newTag
-              />
-            </SplideSlide>
-            <SplideSlide>
-              <MiniCard
+                id={1}
                 product="Living Room"
                 image="/src/assets/sofa.png"
                 price={1200}
@@ -99,6 +94,7 @@ const App = () => {
             </SplideSlide>
             <SplideSlide>
               <MiniCard
+                id={1}
                 product="Living Room"
                 image="/src/assets/sofa.png"
                 price={1200}
@@ -108,6 +104,17 @@ const App = () => {
             </SplideSlide>
             <SplideSlide>
               <MiniCard
+                id={1}
+                product="Living Room"
+                image="/src/assets/sofa.png"
+                price={1200}
+                oldPrice={1700}
+                newTag
+              />
+            </SplideSlide>
+            <SplideSlide>
+              <MiniCard
+                id={1}
                 product="Living Room"
                 image="/src/assets/sofa.png"
                 price={1200}
@@ -145,7 +152,6 @@ const App = () => {
       <Banner />
       <Articles />
       <Newsletter />
-      
     </div>
   );
 };
