@@ -35,20 +35,25 @@ const Drawer = ({ closeDrawer }) => {
             price={20.99}
           />
           <DrawerItem
-            image="\src\assets\order.png"
-            title="Tray Table"
-            color="Black"
-            price={20.99}
-          />
-
-          <DrawerItem
-            image="src\assets\order.png"
+            image="\src\assets\chair3.png"
             title="Tray Table"
             color="Black"
             price={20.99}
           />
           <DrawerItem
-            image="src\assets\order.png"
+            image="\src\assets\chair3.png"
+            title="Tray Table"
+            color="Black"
+            price={20.99}
+          />
+          <DrawerItem
+            image="\src\assets\chair3.png"
+            title="Tray Table"
+            color="Black"
+            price={20.99}
+          />
+          <DrawerItem
+            image="\src\assets\chair3.png"
             title="Tray Table"
             color="Black"
             price={20.99}

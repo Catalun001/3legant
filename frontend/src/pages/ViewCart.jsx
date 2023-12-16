@@ -2,9 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CartSum from "../components/CartSum/CartSum";
 import Coupon from "../components/Coupon/Coupon";
+import ProductsCart from "../components/ProductsCart/ProductsCart";
+
 const ViewCart = () => {
   return (
-    <div className="viewcart mx-48">
+    <div className="viewcart mx-48 flex items-center justify-center">
       <div className="container  my-10 flex-col items-center justify-center gap-10">
         <div className="flex flex-col items-center justify-center gap-10 ">
           <div className="title text-black font-pop text-5xl">Cart</div>
@@ -38,7 +40,32 @@ const ViewCart = () => {
             </div>
           </div>
         </div>
-        <div className="bag-and-sum flex items-center py-20">
+        <div className="bag-and-sum flex py-20 gap-24">
+          <ProductsCart
+            products={[
+              {
+                title: "Tray Table",
+                color: "Black",
+                price: 104,
+                quantity: 2,
+                image: "src/assets/chair.png",
+              },
+              {
+                title: "Tray Table",
+                color: "Black",
+                price: 100,
+                quantity: 2,
+                image: "src/assets/chair.png",
+              },
+              {
+                title: "Tray Table",
+                color: "Black",
+                price: 100,
+                quantity: 2,
+                image: "src/assets/chair.png",
+              },
+            ]}
+          />
           <CartSum subtotal={100} />
         </div>
         <Coupon />

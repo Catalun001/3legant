@@ -1,14 +1,20 @@
-import React from "react";
-import "./FormClient.css";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./FormClient.css";
+
 const FormClient = () => {
-  
+  const [selectedPaymentOption, setSelectedPaymentOption] = useState("card");
+
+  const handlePaymentOptionChange = (option) => {
+    setSelectedPaymentOption(option);
+  };
+
   return (
     <div className="formclient inline-flex flex-col gap-6">
       <div className="content flex flex-col gap-6">
         <div className="contact-information border border-[#6C7275] px-6 py-10 rounded w-[38vw]">
           <div className="title text-black font-pop text-xl font-medium">
-            Contact Infomation
+            Contact Information
           </div>
           <form action="">
             <div className="names mt-6 flex items-center justify-between">
@@ -45,7 +51,6 @@ const FormClient = () => {
                 </div>
               </div>
             </div>
-
             <div className="phone mt-6">
               <label
                 htmlFor="Phone"
@@ -53,7 +58,7 @@ const FormClient = () => {
               >
                 PHONE NUMBER
               </label>
-              <div className="font-int text-sm font-normal  mt-3">
+              <div className="font-int text-sm font-normal mt-3">
                 <input
                   type="text"
                   id="Phone"
@@ -70,7 +75,7 @@ const FormClient = () => {
               >
                 EMAIL ADDRESS
               </label>
-              <div className="font-int text-sm font-normal  mt-3">
+              <div className="font-int text-sm font-normal mt-3">
                 <input
                   type="text"
                   id="mail"
@@ -94,7 +99,7 @@ const FormClient = () => {
               >
                 STREET ADDRESS
               </label>
-              <div className="font-int text-sm font-normal  mt-3">
+              <div className="font-int text-sm font-normal mt-3">
                 <input
                   type="text"
                   id="Street"
@@ -111,7 +116,7 @@ const FormClient = () => {
               >
                 COUNTRY
               </label>
-              <div className="font-int text-sm font-normal  mt-3">
+              <div className="font-int text-sm font-normal mt-3">
                 <input
                   type="text"
                   id="country"
@@ -128,7 +133,7 @@ const FormClient = () => {
               >
                 TOWN / CITY
               </label>
-              <div className="font-int text-sm font-normal  mt-3">
+              <div className="font-int text-sm font-normal mt-3">
                 <input
                   type="text"
                   id="town"
@@ -169,7 +174,13 @@ const FormClient = () => {
             Payment method
           </div>
           <form action="">
-            <div className="top flex flex-col gap-6 mt-6 border-b border-[#6C7275] pb-8">
+            <div
+              className={`top flex flex-col gap-6 mt-6 ${
+                selectedPaymentOption === "cash"
+                  ? "border-none"
+                  : "border-b border-[#6C7275] pb-8"
+              }`}
+            >
               <label htmlFor="option10">
                 <div className="option  flex px-4 py-3 rounded items-center gap-3 justify-between border border-[#141718]">
                   <div className="subdiv flex gap-3 items-center justify-center ">
@@ -178,7 +189,8 @@ const FormClient = () => {
                         type="radio"
                         id="option10"
                         name="option"
-                        defaultChecked
+                        checked={selectedPaymentOption === "card"}
+                        onChange={() => handlePaymentOptionChange("card")}
                       />
                     </div>
                     <div className="div">
@@ -191,7 +203,7 @@ const FormClient = () => {
                     </div>
                   </div>
                   <div className="div">
-                    <label htmlFor="option10" className="">
+                    <label htmlFor="option10">
                       <img src="/src/assets/money1.png" alt="" />
                     </label>
                   </div>
@@ -205,7 +217,8 @@ const FormClient = () => {
                         type="radio"
                         id="option20"
                         name="option"
-                        defaultChecked
+                        checked={selectedPaymentOption === "cash"}
+                        onChange={() => handlePaymentOptionChange("cash")}
                       />
                     </div>
                     <div className="div">
@@ -220,52 +233,61 @@ const FormClient = () => {
                 </div>
               </label>
             </div>
-            <div className="phone mt-6">
-              <label
-                htmlFor="num"
-                className="text-[#6C7275] font-int font-bold text-xs"
-              >
-                CARD NUMBER
-              </label>
-              <div className="font-int text-sm font-normal  mt-3">
-                <input
-                  type="text"
-                  id="num"
-                  placeholder="1234 1234 1234"
-                  style={{ width: "100%" }}
-                  required
-                />
-              </div>
-            </div>
-            <div className="names mt-6 flex items-center justify-between">
-              <div className="first">
-                <label
-                  htmlFor="code1"
-                  className="text-[#6C7275] font-int font-bold text-xs"
-                >
-                  EXPIRATION DATE
-                </label>
-                <div className="font-int text-sm font-normal mt-3">
-                  <input type="text" id="code1" placeholder="MM/YY" required />
+            {selectedPaymentOption === "card" && (
+              <>
+                <div className="phone mt-6">
+                  <label
+                    htmlFor="num"
+                    className="text-[#6C7275] font-int font-bold text-xs"
+                  >
+                    CARD NUMBER
+                  </label>
+                  <div className="font-int text-sm font-normal  mt-3">
+                    <input
+                      type="text"
+                      id="num"
+                      placeholder="1234 1234 1234"
+                      style={{ width: "100%" }}
+                      required
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="first">
-                <label
-                  htmlFor="code"
-                  className="text-[#6C7275] font-int font-bold text-xs"
-                >
-                  CVC
-                </label>
-                <div className="font-int text-sm font-normal mt-3">
-                  <input
-                    type="text"
-                    id="code"
-                    placeholder="CVC code"
-                    required
-                  />
+                <div className="names mt-6 flex items-center justify-between">
+                  <div className="first">
+                    <label
+                      htmlFor="code1"
+                      className="text-[#6C7275] font-int font-bold text-xs"
+                    >
+                      EXPIRATION DATE
+                    </label>
+                    <div className="font-int text-sm font-normal mt-3">
+                      <input
+                        type="text"
+                        id="code1"
+                        placeholder="MM/YY"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="first">
+                    <label
+                      htmlFor="code"
+                      className="text-[#6C7275] font-int font-bold text-xs"
+                    >
+                      CVC
+                    </label>
+                    <div className="font-int text-sm font-normal mt-3">
+                      <input
+                        type="text"
+                        id="code"
+                        placeholder="CVC code"
+                        required
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </>
+            )}
           </form>
         </div>
         <div className="checkout">

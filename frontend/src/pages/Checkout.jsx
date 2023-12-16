@@ -38,9 +38,32 @@ const Checkout = () => {
       </div>
       <div className="form my-20 flex gap-16 justify-center ml-[5vw]">
         <FormClient />
-        <OrderSum />
+        <OrderSum
+          products={[
+            {
+              title: "Tray Table",
+              color: "Black",
+              price: 104,
+              quantity: 2,
+              image: "src/assets/chair.png",
+            },
+            {
+              title: "Tray Table",
+              color: "Black",
+              price: 100,
+              quantity: 2,
+              image: "src/assets/chair.png",
+            },
+            {
+              title: "Tray Table",
+              color: "Black",
+              price: 100,
+              quantity: 2,
+              image: "src/assets/chair.png",
+            },
+          ]}
+        />
       </div>
-      
     </div>
   );
 };

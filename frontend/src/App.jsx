@@ -33,10 +33,7 @@ const App = () => {
         <Route path="/success" element={<Success />}></Route>
         <Route path="/sign-in" element={<SignIn />}></Route>
         <Route path="/sign-up" element={<SignUp />}></Route>
-        <Route
-          path="/product/:id"
-          element={<SingleProduct id={1}/>}
-        ></Route>
+        <Route path="/product/:id" element={<SingleProduct id={1} />}></Route>
       </Routes>
       <Footer />
     </div>

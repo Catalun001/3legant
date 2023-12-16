@@ -2,7 +2,7 @@ import React from "react";
 import Quantity from "../Quantity/Quantity";
 const DrawerItem = ({ image, title, color, price, p = 0 }) => {
   const descriptionStyle = {
-    paddingRight: `${p}rem`, // Use the p prop to set the padding
+    paddingRight: `${p}rem`,
   };
   price = parseFloat(price).toFixed(2);
   return (
@@ -26,7 +26,7 @@ const DrawerItem = ({ image, title, color, price, p = 0 }) => {
           ${price}
         </div>
         <div className="delete mt-2 inline-flex ">
-          <img src="src\assets\Line.png" />
+          <img src="\src\assets\Line.png" />
         </div>
       </div>
     </div>

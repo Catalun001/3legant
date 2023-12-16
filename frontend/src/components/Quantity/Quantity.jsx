@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const Quantity = ({ singleProd = 0 }) => {
-  const [amount, setAmount] = useState(0);
+const Quantity = ({ singleProd = 0 ,amount = 0}) => {
+  const [Amount, setAmount] = useState(amount);
 
   const increment = () => {
     setAmount(amount + 1);

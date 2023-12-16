@@ -8,7 +8,7 @@ const CartSum = ({ subtotal }) => {
     setOption(option);
   };
   return (
-    <div className="cartsum w-[413px] border border-[#6C7275] rounded-md p-6">
+    <div className="cartsum  border border-[#6C7275] rounded-md p-6 w-[30%] h-min ">
       <div className="title text-[#141718] font-pop text-xl font-medium">
         Cart summary
       </div>

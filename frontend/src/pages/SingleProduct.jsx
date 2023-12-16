@@ -44,7 +44,7 @@ const SingleProduct = (id) => {
           category="Living Room"
         />
       </div>
-      <div className="more mx-48">
+      <div className="more mx-48 mt-5">
         <div className="new flex-col items-center justify-between ">
           <div className="titleandmore flex items-center justify-between ">
             <div className="title text-2xl text-black font-medium font-pop">
