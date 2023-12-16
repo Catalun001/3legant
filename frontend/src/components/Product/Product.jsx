@@ -205,7 +205,7 @@ const Product = ({
         <div className="product-cart flex flex-col gap-6 py-4">
           <div className="top flex items-center gap-6">
             <div className="amount">
-              <Quantity singleProd />
+              <Quantity singleProd={1} />
             </div>
             <a
               href=""

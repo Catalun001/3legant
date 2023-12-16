@@ -54,14 +54,14 @@ const ViewCart = () => {
                 title: "Tray Table",
                 color: "Black",
                 price: 100,
-                quantity: 2,
+                quantity: 1,
                 image: "src/assets/chair.png",
               },
               {
                 title: "Tray Table",
                 color: "Black",
                 price: 100,
-                quantity: 2,
+                quantity: 0,
                 image: "src/assets/chair.png",
               },
             ]}

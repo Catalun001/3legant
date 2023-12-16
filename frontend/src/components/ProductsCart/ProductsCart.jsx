@@ -54,7 +54,7 @@ const ProductsCart = ({ products }) => {
                   : "border-y border-[#E8ECEF]"
               }`}
             >
-              <Quantity amount={products[index].Quantity} />
+              <Quantity amount={products[index].quantity} />
             </div>
           </div>
           <div className="c3 flex flex-col items-center justify-center ">
