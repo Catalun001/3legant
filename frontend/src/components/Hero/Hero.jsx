@@ -15,7 +15,7 @@ const Hero = () => {
           </SplideSlide>
           <SplideSlide className="flex items-center justify-center">
             <img
-              src="/src/assets/slider1.png"
+              src="./public/slider1.png"
               alt="Image 2"
               style={{ objectFit: "cover", height: "610px", width: "1640px" }}
             />
