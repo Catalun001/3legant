@@ -30,7 +30,7 @@ const SignUp = () => {
         </div>
         <div className="subtitle text text-[#6C7275] mt-4 text-base font-normal font-int">
           Already have an account?
-          <Link to="/sign-in" className="text-[#38CB89] font-semibold">
+          <Link to="/sign-in" className="text-[#38CB89] font-semibold ml-1">
             Sign in
           </Link>
         </div>

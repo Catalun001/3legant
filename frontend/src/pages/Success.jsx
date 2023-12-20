@@ -49,19 +49,19 @@ const Success = () => {
         </div>
         <div className="orders flex items-center justify-center flex-wrap gap-10">
           <div className="img">
-            <img src="src/assets/order.png" alt="" />
+            <img src="src/assets/chair2.png" alt="" />
           </div>
           <div className="img">
-            <img src="src/assets/order.png" alt="" />
+            <img src="src/assets/chair1.png" alt="" />
           </div>
           <div className="img">
-            <img src="src/assets/order.png" alt="" />
+            <img src="src/assets/chair1.png" alt="" />
           </div>
           <div className="img">
-            <img src="src/assets/order.png" alt="" />
+            <img src="src/assets/chair1.png" alt="" />
           </div>
           <div className="img">
-            <img src="src/assets/order.png" alt="" />
+            <img src="src/assets/chair1.png" alt="" />
           </div>
         </div>
         <div className="description flex gap-10 ">
