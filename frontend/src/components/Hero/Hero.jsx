@@ -4,18 +4,22 @@ import "@splidejs/react-splide/css";
 const Hero = () => {
   return (
     <div className="flex-col items-center justify-center mx-48">
-      <Splide hasTrack={false} className="flex items-center justify-center">
+      <Splide
+        hasTrack={false}
+        
+        className="flex items-center justify-center"
+      >
         <SplideTrack>
           <SplideSlide className="flex items-center justify-center">
             <img
-              src="/public/slider1.png"
+              src="/src/assets/slider1.png"
               alt="Image 1"
               style={{ objectFit: "cover", height: "610px", width: "1640px" }}
             />
           </SplideSlide>
           <SplideSlide className="flex items-center justify-center">
             <img
-              src="./public/slider1.png"
+              src="/src/assets/slider1.png"
               alt="Image 2"
               style={{ objectFit: "cover", height: "610px", width: "1640px" }}
             />
