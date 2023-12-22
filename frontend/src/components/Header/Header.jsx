@@ -30,7 +30,7 @@ const Header = () => {
         <Notification />
       ) : null}
       {location.pathname !== "/sign-in" && location.pathname !== "/sign-up" ? (
-        <div className="py-5 header flex items-center justify-between mx-48">
+        <div className="py-5 header flex items-center justify-between mx-48 ">
           <div className="left-header font-pop text-2xl font-medium leading-6 text-black flex items-center">
             <Link to="/">3legant</Link>
             <div className="font-pop text-2xl font-medium leading-6 text-[#6C7275]">
@@ -38,7 +38,7 @@ const Header = () => {
             </div>
           </div>
           {/* active - #14171, not-active -#6C7275 */}
-          <div className="middle-header">
+          <div className="middle-header max-lg:hidden">
             <ul className="links flex gap-10">
               <li
                 className={`font-spa text-sm font-medium ${

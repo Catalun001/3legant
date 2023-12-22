@@ -8,9 +8,9 @@ const HeroShop = ({page, image, title,description}) => {
     backgroundSize: "cover",
   };
   return (
-    <div className="Hero">
+    <div className="Hero mx-48 ">
       <div
-        className="HeroBg flex flex-col items-center justify-center py-28 mx-48"
+        className="HeroBg flex flex-col items-center justify-center py-28 "
         style={cardStyle}
       >
         <div className="categories  flex items-center justify-center gap-4">
@@ -26,7 +26,7 @@ const HeroShop = ({page, image, title,description}) => {
           {title}
         </div>
         <div className="description text-[#121212] font-int text-xl font-normal">
-        {description}
+          {description}
         </div>
       </div>
     </div>

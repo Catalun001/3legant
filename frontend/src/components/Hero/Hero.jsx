@@ -3,7 +3,7 @@ import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 const Hero = () => {
   return (
-    <div className="flex-col items-center justify-center mx-48">
+    <div className="flex-col items-center justify-center mx-48 max-lg:mx-[8vw]">
       <Splide
         hasTrack={false}
         
