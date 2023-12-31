@@ -13,14 +13,14 @@ import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 const App = () => {
   return (
     <div className="home  ">
-      <div className="content  max-2xl:mx-[10vw]">
+      <div className="content  ">
         <HeroShop
           image="/src/assets/heroimage.png"
           title="Shop Page"
           page="Shop"
           description="Let’s design the place you always imagined."
         />
-        <div className=" py-14 mx-48 gap-10 max-lg:gap-20 flex justify-between max-md:flex-col">
+        <div className=" py-20 mx-48  gap-10 flex justify-between  max-sm:mx-4  max-sm:gap-14 max-sm:flex-wrap max-sm:items-center  max-md:mx-10 max-md:gap-20 max-lg:mx-14 max-xl:mx-16 max-2xl:mx-[120px]">
           <div className="left filters flex flex-col  w-[35vw]">
             <div className="header flex items-center gap-2">
               <div className="imagine">
@@ -161,8 +161,8 @@ const App = () => {
             </div>
           </div>
           <div className="head flex flex-col">
-            <div className="head2 flex items-center justify-between">
-              <div className="selectedCategories text-black font-int text-xl font-semibold">
+            <div className="head2 flex items-center justify-between flex-wrap">
+              <div className="selectedCategories text-black font-int text-xl font-semibold p-3">
                 Living Room
               </div>
               <div className="sortBy">
@@ -185,7 +185,7 @@ const App = () => {
                 </Select>
               </div>
             </div>
-            <div className="cards flex gap-6 items-center mt-10 flex-wrap">
+            <div className="cards flex gap-6 items-center mt-10 flex-wrap max-sm:gap-2  ">
               <MiniCard
                 product="Living Room"
                 image="/src/assets/sofa.png"

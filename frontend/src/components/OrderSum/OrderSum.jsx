@@ -3,8 +3,8 @@ import DrawerItem from "../DrawerItem/DrawerItem";
 
 const OrderSum = ({ products }) => {
   return (
-    <div className="container ">
-      <div className="order border border-[#6C7275] px-6 py-4 rounded-md inline-flex flex-col">
+    <div className="container max-sm:flex max-sm:items-center max-sm:justify-center max-md:flex max-md:items-center max-md:justify-center ">
+      <div className="order border border-[#6C7275] px-6 py-4 max-sm:px-3  rounded-md inline-flex flex-col">
         <div className="title text-[#121212] font-pop text-3xl font-medium">
           Order summary
         </div>

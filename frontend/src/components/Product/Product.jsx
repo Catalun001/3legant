@@ -67,16 +67,19 @@ const Product = ({
   }, []);
 
   return (
-    <div className="product flex gap-16 mt-3 my-10">
-      <div className="left w-1/2 flex flex-col overflow-hidden object-cover items-center ">
-        <Splide hasTrack={false} className="flex items-center justify-center">
+    <div className="product flex gap-16 max-sm:gap-10 max-md:gap-10 max-lg:gap-8 mt-3 my-10 max-sm:flex-wrap max-md:flex-wrap items-center justify-center  ">
+      <div className="left  w-[30vw] max-lg:w-[60vw] max-xl:w-[50vw] max-2xl:w-[50vw] max-sm:w-full max-md:w-full  flex flex-col  object-cover items-center justify-center ">
+        <Splide hasTrack={false} className="flex items-center justify-center  ">
           <SplideTrack>
             {images.map((image, index) => (
               <SplideSlide
                 key={index}
-                className="flex items-center justify-center"
+                className="flex items-center object-cover justify-center w-full  max-lg:w-[80vh] max-lg:h-[60vh] max-sm:w-full max-sm:h-[120vw] max-md:w-full max-md:h-[120vw]"
               >
-                <img src={image} className="object-cover h-[729px] w-[548px]" />
+                <img
+                  src={image}
+                  className="object-cover h-[729px] w-[548px] max-lg:w-[80vh] max-lg:h-[60vh] max-sm:w-full max-sm:h-[120vw] max-md:w-full max-md:h-[120vw]"
+                />
               </SplideSlide>
             ))}
           </SplideTrack>
@@ -89,8 +92,7 @@ const Product = ({
             </button>
           </div>
         </Splide>
-
-        <div className="all-images flex items-center gap-[1.5vw] mt-4">
+        <div className="all-images flex items-center gap-[1.5vw] mt-4 max-sm:hidden max-md:hidden">
           {images.slice(1, 4).map((image, index) => (
             <div key={index} className="image">
               <img src={image} className="w-40 h-40 object-cover" />
@@ -98,10 +100,10 @@ const Product = ({
           ))}
         </div>
       </div>
-      <div className="right flex flex-col ">
+      <div className="right flex flex-col w-[50vw]  max-sm:w-full  max-md:w-full overflow-hidden">
         <div className="info flex flex-col pb-6 gap-4">
           <div className="rating flex items-center gap-0.5">{Stars()}</div>
-          <div className="title text-[#141718] font-pop text-4xl font-medium flex items-center gap-2">
+          <div className="title text-[#141718] font-pop text-4xl font-medium flex items-center gap-2 max-xl:text-[29px] ">
             {title}
             {newTag !== 0 && (
               <div className="rounded-md flex justify-center items-center new-tag text-base font-int bg-[#F5F5F5] font-bold text-[#141718] px-3 py-1">
@@ -202,8 +204,8 @@ const Product = ({
             </div>
           </div>
         </div>
-        <div className="product-cart flex flex-col gap-6 py-4">
-          <div className="top flex items-center gap-6">
+        <div className="product-cart flex flex-col gap-6 py-4 overflow-hidden">
+          <div className="top flex items-center gap-6 max-sm:justify-between max-lg:justify-between max-xl:justify-between max-2xl:justify-between">
             <div className="amount">
               <Quantity singleProd={1} />
             </div>
@@ -214,21 +216,21 @@ const Product = ({
               <div className="wishlist ">
                 <button
                   onClick={(event) => toggle(event)}
-                  className="flex items-center justify-center gap-2 px-40 py-2"
+                  className="flex items-center justify-center gap-2  py-2 px-[10.4rem] w-full max-sm:w-[54vw] max-lg:px-[2.5rem] max-xl:px-[6.5rem]  max-2xl:px-[6rem] max-md:px-[20vw] "
                 >
                   {isHeart ? (
                     <img src="\src\assets\HeartClick.png" alt="" />
                   ) : (
-                    <img src="\src\assets\Heart.png" alt="" />
+                    <img src="\src\assets\Heart.svg" alt="" />
                   )}
                   Wishlist
                 </button>
               </div>
             </a>
           </div>
-          <div className="add-to-cart">
-            <div className="w-full">
-              <button className="bg-[#141718] text-white font-int text-md font-medium rounded-lg py-3 w-[63%] ">
+          <div className="add-to-cart  ">
+            <div className=" ">
+              <button className="bg-[#141718] max-sm:w-full  text-white font-int text-md font-medium rounded-lg py-3  max-lg:w-full max-xl:w-full max-2xl:w-full 2xl:w-[35.8rem]">
                 Add to cart
               </button>
             </div>

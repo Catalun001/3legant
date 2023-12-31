@@ -9,11 +9,12 @@ const Input = ({ title, isPassword }) => {
   };
 
   return (
-    <div className="input border-b border-red">
+    <div className="input border-b border-red w-full">
       <input
         type={isPassword ? "password" : "text"}
         placeholder={title}
         value={inputValue}
+        className="w-full"
         onChange={handleChange}
       />
     </div>

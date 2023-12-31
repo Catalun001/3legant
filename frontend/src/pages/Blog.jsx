@@ -16,13 +16,13 @@ const Blog = () => {
         page="Blog"
         description="Home ideas and design inspiration"
       />
-      <div className="mx-48">
-        <div className="header flex items-center justify-between pt-6">
+      <div className="mx-48 max-sm:mx-4 max-md:mx-10 max-lg:mx-14 max-xl:mx-16 max-2xl:mx-[120px]">
+        <div className="header flex items-center justify-between pt-6 flex-wrap">
           <div className="left flex gap-10">
             <Check name="All Blog" state />
             <Check name="Featured" />
           </div>
-          <div className="right">
+          <div className="right py-5">
             <Select
               placeholder="Sort By"
               indicator={<KeyboardArrowDown />}
@@ -42,7 +42,7 @@ const Blog = () => {
           </div>
         </div>
 
-        <div className="cards flex flex-wrap gap-[1.5vw] pt-10 pb-20">
+        <div className="cards flex flex-wrap gap-[1.5vw] pt-10 pb-20 max-sm:justify-center max-lg:gap-[1vw]">
           <BlogCard
             title="7 ways to decor your home like a professional"
             date="October 16, 2023"

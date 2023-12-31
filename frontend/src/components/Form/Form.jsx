@@ -1,19 +1,32 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "./Form.css";
+
 const Form = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <form action="">
       <div className="form flex flex-col gap-6">
         <div className="fullname flex flex-col gap-3 text-[#6C7275] font-int text-xs font-bold ">
           <label htmlFor="name">FULL NAME</label>
-          <div className="font-int text-sm font-normal ">
+          <div className="font-int text-sm font-normal name1">
             <input
               type="text"
               id="name"
               placeholder="Your Name"
               required
-              style={{ width: "60vh" }}
+              style={{ width: windowWidth < 1280 ? "67vw" : "30vw" }}
             />
           </div>
         </div>
@@ -25,7 +38,7 @@ const Form = () => {
               id="email"
               placeholder="Your Email"
               required
-              style={{ width: "60vh" }}
+              style={{ width: windowWidth < 1280 ? "67vw" : "30vw" }}
             />
           </div>
         </div>
@@ -36,7 +49,10 @@ const Form = () => {
               type="text"
               id="message"
               placeholder="Your message"
-              style={{ width: "60vh", height: "20vh" }}
+              style={{
+                width: windowWidth < 1280 ? "67vw" : "30vw",
+                height: "20vh",
+              }}
               required
             />
           </div>

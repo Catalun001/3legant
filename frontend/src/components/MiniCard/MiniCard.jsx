@@ -19,8 +19,6 @@ const MiniCard = ({
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     objectFit: "cover",
-    height: "349px",
-    width: "262px",
   };
 
   const sale = Math.floor(((oldPrice - price) / oldPrice) * 100);
@@ -29,7 +27,7 @@ const MiniCard = ({
     const stars = [];
     for (let i = 0; i < 5; i++)
       if (i < rating)
-        stars.push(<img key={i} src="/src/assets/Star.png" alt="star" />);
+        stars.push(<img key={i} src="/src/assets/Star.svg" alt="star" />);
       else stars.push(<img key={i} src="/src/assets/unStar.png" alt="star" />);
 
     return stars;
@@ -38,17 +36,17 @@ const MiniCard = ({
   return (
     <Link to={`/product/${id}`}>
       <div
-        className={`mini-card inline-flex flex-col ${
+        className={`mini-card inline-flex flex-col mt-4 ${
           isHovered ? "hovered" : ""
         } transition-all duration-300 ease-in-out`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <div
-          className="bg p-4 inline-flex flex-col justify-between transition-all duration-300 ease-in-out"
+          className="bg p-4 inline-flex flex-col justify-between transition-all duration-300 ease-in-out w-64 h-80 max-sm:w-44 max-sm:h-52 max-lg:w-60 max-lg:h-80"
           style={cardStyle}
         >
-          <div className="header-card flex justify-between">
+          <div className="header-card flex justify-between h-">
             <div className="left-header flex-col">
               {newTag !== 0 && (
                 <div className="rounded-md flex justify-center items-center new-tag text-base font-int bg-white font-bold text-[#141718] px-3 py-1">

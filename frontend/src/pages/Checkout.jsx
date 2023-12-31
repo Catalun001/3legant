@@ -3,7 +3,7 @@ import FormClient from "../components/FormClient/FormClient";
 import OrderSum from "../components/OrderSum/OrderSum";
 const Checkout = () => {
   return (
-    <div className="checkout mx-48">
+    <div className="checkout mx-48 max-sm:mx-4 max-md:mx-10 max-lg:mx-14 max-xl:mx-16 max-2xl:mx-[120px] ">
       <div className="flex flex-col items-center justify-center gap-10 my-10">
         <div className="title text-black font-pop text-5xl ">Check Out</div>
         <div className="steps flex items-center justify-center gap-10">
@@ -25,7 +25,7 @@ const Checkout = () => {
               Checkout details
             </div>
           </div>
-          <div className="step1 flex items-center gap-4 border-b-2 border-white pb-6">
+          <div className="step1 flex items-center gap-4 border-b-2 max-sm:hidden border-white pb-6">
             <div className="number font-int text-base font-semibold rounded-full bg-[#B1B5C3] text-[#FCFCFD] px-4 py-2">
               3
             </div>
@@ -36,7 +36,7 @@ const Checkout = () => {
           </div>
         </div>
       </div>
-      <div className="form my-20 flex gap-16 justify-center ml-[5vw]">
+      <div className="form my-20 flex gap-16 justify-center ml-[5vw] max-sm:flex-wrap max-sm:ml-0 max-md:flex-wrap max-md:ml-0">
         <FormClient />
         <OrderSum
           products={[
