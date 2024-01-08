@@ -46,7 +46,7 @@ const ProductsCart = ({ products }) => {
               </div>
             )}
             <div
-              className={`flex items-center w-full justify-center h-full ${
+              className={`flex items-center w-full justify-center h-full  ${
                 index != 0
                   ? "border-b border-[#E8ECEF]"
                   : "border-y border-[#E8ECEF]"
@@ -62,7 +62,7 @@ const ProductsCart = ({ products }) => {
               </div>
             )}
             <div
-              className={`flex items-center justify-center max-sm:hidden  h-full w-full font-int text-lg font-normal ${
+              className={`flex items-center justify-center max-sm:hidden   h-full w-full font-int text-lg font-normal ${
                 index != 0
                   ? "border-b border-[#E8ECEF]"
                   : "border-y border-[#E8ECEF]"

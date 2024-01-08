@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import Quantity from "../Quantity/Quantity";
+
 import "@splidejs/react-splide/css";
 import "./Product.css";
 
@@ -17,9 +18,6 @@ const Product = ({
   productCode,
   newTag = 0,
 }) => {
-  const [selectedColor, setSelectedColor] = useState(
-    Object.keys(imagesColors)[0]
-  );
   const [isHeart, setHeart] = useState(0);
 
   const toggle = (event) => {
@@ -33,10 +31,6 @@ const Product = ({
     minutes: 0,
     seconds: 0,
   });
-
-  const colorChange = (color) => {
-    setSelectedColor(color);
-  };
 
   const Stars = () => {
     const stars = [];
@@ -65,35 +59,63 @@ const Product = ({
     }, 1000);
     return () => clearInterval(intervalId);
   }, []);
+  const [selectedColor, setSelectedColor] = useState(null);
+
+  const colorChange = (color) => {
+    setSelectedColor(color);
+  };
+
+  const resetColor = () => {
+    setSelectedColor(null);
+  };
 
   return (
     <div className="product flex gap-16 max-sm:gap-10 max-md:gap-10 max-lg:gap-8 mt-3 my-10 max-sm:flex-wrap max-md:flex-wrap items-center justify-center  ">
-      <div className="left  w-[30vw] max-lg:w-[60vw] max-xl:w-[50vw] max-2xl:w-[50vw] max-sm:w-full max-md:w-full  flex flex-col  object-cover items-center justify-center ">
-        <Splide hasTrack={false} className="flex items-center justify-center  ">
-          <SplideTrack>
+      <div className="left  w-[35vw] max-lg:w-[60vw] max-xl:w-[50vw] max-2xl:w-[50vw] max-sm:w-full max-md:w-full  flex flex-col  object-cover items-center justify-center ">
+        <Splide
+          hasTrack={false}
+          className="flex items-center justify-center"
+          onDrag={resetColor}
+        >
+          <SplideTrack onDrag={resetColor}>
             {images.map((image, index) => (
               <SplideSlide
                 key={index}
-                className="flex items-center object-cover justify-center w-full  max-lg:w-[80vh] max-lg:h-[60vh] max-sm:w-full max-sm:h-[120vw] max-md:w-full max-md:h-[120vw]"
+                className="flex items-center object-cover justify-center w-full max-lg:w-[80vh] max-lg:h-[60vh] max-sm:w-full max-sm:h-[120vw] max-md:w-full max-md:h-[120vw]"
               >
-                <img
-                  src={image}
-                  className="object-cover h-[729px] w-[548px] max-lg:w-[80vh] max-lg:h-[60vh] max-sm:w-full max-sm:h-[120vw] max-md:w-full max-md:h-[120vw]"
-                />
+                {selectedColor ? (
+                  <img
+                    src={imagesColors[selectedColor]}
+                    alt={`Color ${selectedColor}`}
+                    className="object-cover h-[729px] w-[548px] max-lg:w-[80vh] max-lg:h-[60vh] max-sm:w-full max-sm:h-[120vw] max-md:w-full max-md:h-[120vw]"
+                  />
+                ) : (
+                  <img
+                    src={image}
+                    alt={`Image ${index}`}
+                    className="object-cover h-[729px] w-[548px] max-lg:w-[80vh] max-lg:h-[60vh] max-sm:w-full max-sm:h-[120vw] max-md:w-full max-md:h-[120vw]"
+                  />
+                )}
               </SplideSlide>
             ))}
           </SplideTrack>
           <div className="splide__arrows">
-            <button className="splide__arrow splide__arrow--prev">
-              <img src="/src/assets/arrow-left.svg" />
+            <button
+              className="splide__arrow splide__arrow--prev"
+              onClick={resetColor}
+            >
+              <img src="/src/assets/arrow-left.svg" alt="Previous" />
             </button>
-            <button className="splide__arrow splide__arrow--next ">
-              <img src="/src/assets/arrow-right.svg" />
+            <button
+              className="splide__arrow splide__arrow--next"
+              onClick={resetColor}
+            >
+              <img src="/src/assets/arrow-right.svg" alt="Next" />
             </button>
           </div>
         </Splide>
         <div className="all-images flex items-center gap-[1.5vw] mt-4 max-sm:hidden max-md:hidden">
-          {images.slice(1, 4).map((image, index) => (
+          {images.slice(-3).map((image, index) => (
             <div key={index} className="image">
               <img src={image} className="w-40 h-40 object-cover" />
             </div>
@@ -174,21 +196,18 @@ const Product = ({
             </div>
             <div className="all-images-colors flex  mt-4">
               {Object.keys(imagesColors).map((color) => (
-                <label
+                <div
                   key={color}
                   className={`color-swatch relative w-20 flex items-center justify-center ${
                     selectedColor === color ? "selected" : ""
                   }`}
+                  onClick={() => colorChange(color)}
                 >
                   <input
                     type="checkbox"
-                    className={`opacity-0 absolute z-10 w-full h-full object-cover  ${
-                      selectedColor === color
-                        ? "checked:border checked:border-black"
-                        : ""
-                    }`}
+                    className="opacity-0 absolute z-10 w-full h-full object-cover"
                     checked={selectedColor === color}
-                    onChange={() => colorChange(color)}
+                    onChange={() => {}}
                   />
                   <img
                     src={imagesColors[color]}
@@ -199,7 +218,7 @@ const Product = ({
                         : ""
                     }`}
                   />
-                </label>
+                </div>
               ))}
             </div>
           </div>

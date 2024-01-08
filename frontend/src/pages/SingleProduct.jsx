@@ -36,9 +36,9 @@ const SingleProduct = () => {
           ]}
           productCode={1240}
           imagesColors={{
-            Black: "/src/assets/chair1.png",
-            Beige: "/src/assets/chair2.png",
-            Red: "/src/assets/chair3.png",
+            Black: "/src/assets/chair1.jpg",
+            Beige: "/src/assets/chair2.jpg",
+            Red: "/src/assets/chair3.jpg",
           }}
           description="Buy one or buy a few and make every space where you sit more convenient. Light and easy to move around with a removable tray top, handy for serving snacks."
           category="Living Room"
