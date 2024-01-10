@@ -7,7 +7,7 @@ import ProductsCart from "../components/ProductsCart/ProductsCart";
 const ViewCart = () => {
   return (
     <div className="viewcart mx-48 flex items-center justify-center max-sm:mx-4 max-md:mx-10 max-lg:mx-14 max-xl:mx-16 max-2xl:mx-[120px]">
-      <div className="container  my-10 flex-col items-center justify-center gap-10">
+      <div className="container  my-10 flex-col items-center justify-center gap-10 max-sm:gap-3  ">
         <div className="flex flex-col items-center justify-center gap-10 ">
           <div className="title text-black font-pop text-5xl">Cart</div>
           <div className="steps flex items-center justify-center gap-10">
@@ -40,7 +40,8 @@ const ViewCart = () => {
             </div>
           </div>
         </div>
-        <div className="bag-and-sum flex py-20 gap-24 max-sm:flex-wrap">
+
+        <div className="bag-and-sum flex py-20  max-md:gap-14 max-sm:flex-wrap max-lg:flex-wrap max-sm:gap-14 justify-center max-sm:py-12 md:gap-4 2xl:gap-24">
           <ProductsCart
             products={[
               {

@@ -8,18 +8,7 @@ const FormClient = () => {
   const handlePaymentOptionChange = (option) => {
     setSelectedPaymentOption(option);
   };
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
 
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
   return (
     <div className="formclient inline-flex flex-col gap-6 w-full">
       <div className="content flex flex-col gap-6">
@@ -28,11 +17,11 @@ const FormClient = () => {
             Contact Information
           </div>
           <form action="">
-            <div className="names mt-6 flex items-center justify-between ">
-              <div className="first ">
+            <div className="names mt-6 flex items-center justify-between gap-3   ">
+              <div className="first flex flex-col justify-center">
                 <label
                   htmlFor="name"
-                  className="text-[#6C7275] font-int font-bold text-xs  w-40"
+                  className="text-[#6C7275] font-int font-bold text-xs  "
                 >
                   FIRST NAME
                 </label>
@@ -43,25 +32,28 @@ const FormClient = () => {
                     placeholder="Your Name"
                     className="max-sm:p-0"
                     style={{
-                      width: windowWidth < 640 ? "34vw" : "",
+                      width: "100%",
                     }}
                     required
                   />
                 </div>
               </div>
-              <div className="first">
+              <div className="first flex flex-col justify-center">
                 <label
                   htmlFor="Last"
-                  className="text-[#6C7275] font-int font-bold text-xs"
+                  className="text-[#6C7275] font-int font-bold text-xs  "
                 >
                   LAST NAME
                 </label>
-                <div className="font-int text-sm font-normal mt-3">
+                <div className="font-int text-sm font-normal mt-3 ">
                   <input
                     type="text"
                     id="Last"
                     placeholder="Last name"
-                    style={{ width: windowWidth < 640 ? "34vw " : "" }}
+                    className="max-sm:p-0"
+                    style={{
+                      width: "100%",
+                    }}
                     required
                   />
                 </div>
@@ -159,7 +151,7 @@ const FormClient = () => {
                 />
               </div>
             </div>
-            <div className="names mt-6 flex items-center justify-between">
+            <div className="names mt-6 flex items-center justify-between gap-3">
               <div className="first">
                 <label
                   htmlFor="state"
@@ -173,7 +165,7 @@ const FormClient = () => {
                     id="state"
                     placeholder="State"
                     required
-                    style={{ width: windowWidth < 640 ? "34vw " : "" }}
+                    style={{ width: "100%" }}
                   />
                 </div>
               </div>
@@ -190,7 +182,7 @@ const FormClient = () => {
                     id="zip"
                     placeholder="Zip Code"
                     required
-                    style={{ width: windowWidth < 640 ? "34vw " : "" }}
+                    style={{ width: "100%" }}
                   />
                 </div>
               </div>
@@ -280,8 +272,8 @@ const FormClient = () => {
                     />
                   </div>
                 </div>
-                <div className="names mt-6 flex items-center justify-between">
-                  <div className="first">
+                <div className="names mt-6 flex items-center justify-between gap-3">
+                  <div className="first flex flex-col justify-center">
                     <label
                       htmlFor="code1"
                       className="text-[#6C7275] font-int font-bold text-xs"
@@ -293,12 +285,12 @@ const FormClient = () => {
                         type="text"
                         id="code1"
                         placeholder="MM/YY"
-                        style={{ width: windowWidth < 640 ? "34vw " : "" }}
+                        style={{ width: "100%" }}
                         required
                       />
                     </div>
                   </div>
-                  <div className="first">
+                  <div className="first flex flex-col justify-center">
                     <label
                       htmlFor="code"
                       className="text-[#6C7275] font-int font-bold text-xs"
@@ -310,7 +302,7 @@ const FormClient = () => {
                         type="text"
                         id="code"
                         placeholder="CVC code"
-                        style={{ width: windowWidth < 640 ? "34vw " : "" }}
+                        style={{ width: "100%" }}
                         required
                       />
                     </div>
