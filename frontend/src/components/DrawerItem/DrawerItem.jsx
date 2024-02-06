@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import Quantity from "../Quantity/Quantity";
-const DrawerItem = ({ image, title, color, price, p = 0 }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart, updateQuantity } from "../../features/cartSlice";
+const DrawerItem = ({
+  productId,
+  image,
+  title,
+  color,
+  price,
+  p = 0,
+  Amount,
+}) => {
+  const cartItems = useSelector((state) => state.cart.cartItems);
   const descriptionStyle = {
     paddingRight: `${p}rem`,
   };
   price = parseFloat(price).toFixed(2);
+  const [amount, setAmount] = useState(1);
+  const dispatch = useDispatch();
+  const handleQuantityChange = (productId, newAmount) => {
+    const itemToUpdate = cartItems.find((item) => item.id === productId);
+    if (itemToUpdate) {
+      dispatch(updateQuantity({ id: productId, amount: newAmount }));
+    }
+  };
+  const handleDelete = () => {
+    dispatch(removeFromCart(productId));
+  };
   return (
     <div className="item flex py-6">
       <div className="image">
@@ -18,14 +40,19 @@ const DrawerItem = ({ image, title, color, price, p = 0 }) => {
           Color: {color}
         </div>
         <div className="quantity w-[90px]  ">
-          <Quantity />
+          <Quantity
+            amount={Amount}
+            onQuantityChange={(amount) =>
+              handleQuantityChange(productId, amount)
+            }
+          />
         </div>
       </div>
       <div className="deleteAndPrice  flex flex-col  justify-start items-end ">
         <div className="price text-[#121212] font-int text-sm font-semibold">
           ${price}
         </div>
-        <div className="delete mt-2 inline-flex ">
+        <div className="delete mt-2 inline-flex " onClick={handleDelete}>
           <img src="\src\assets\Line.png" />
         </div>
       </div>

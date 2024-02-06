@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./FormClient.css";
-
+import { setMethod } from "../../features/cartSlice";
+import { useDispatch } from "react-redux";
 const FormClient = () => {
   const [selectedPaymentOption, setSelectedPaymentOption] = useState("card");
 
   const handlePaymentOptionChange = (option) => {
     setSelectedPaymentOption(option);
+    let selectedPayment;
+    if (selectedPaymentOption === "cash") selectedPayment = "Card";
+    else if (selectedPaymentOption === "card") selectedPayment = "Cash";
+    else selectedPayment = "Card";
+    dispatch(setMethod({ paymentMethod: selectedPayment }));
+    console.log(selectedPayment);
   };
+  const dispatch = useDispatch();
 
   return (
     <div className="formclient inline-flex flex-col gap-6 w-full">

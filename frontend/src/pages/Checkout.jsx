@@ -1,7 +1,9 @@
 import React from "react";
 import FormClient from "../components/FormClient/FormClient";
 import OrderSum from "../components/OrderSum/OrderSum";
+import { useSelector } from "react-redux";
 const Checkout = () => {
+  const cartItems = useSelector((state) => state.cart.cartItems);
   return (
     <div className="checkout mx-48 max-sm:mx-4 max-md:mx-10 max-lg:mx-14 max-xl:mx-16 max-2xl:mx-[120px] ">
       <div className="flex flex-col items-center justify-center gap-10 my-10">
@@ -36,33 +38,9 @@ const Checkout = () => {
           </div>
         </div>
       </div>
-      <div className="form my-20 flex gap-16 justify-center ml-[5vw] max-sm:flex-wrap max-sm:ml-0 max-md:flex-wrap max-md:ml-0">
+      <div className="form my-20 flex gap-16  justify-center ml-[5vw] max-sm:flex-wrap max-sm:ml-0 max-md:flex-wrap max-md:ml-0">
         <FormClient />
-        <OrderSum
-          products={[
-            {
-              title: "Tray Table",
-              color: "Black",
-              price: 104,
-              quantity: 2,
-              image: "src/assets/chair.png",
-            },
-            {
-              title: "Tray Table",
-              color: "Black",
-              price: 100,
-              quantity: 2,
-              image: "src/assets/chair.png",
-            },
-            {
-              title: "Tray Table",
-              color: "Black",
-              price: 100,
-              quantity: 2,
-              image: "src/assets/chair.png",
-            },
-          ]}
-        />
+        <OrderSum cartItems={cartItems} />
       </div>
     </div>
   );

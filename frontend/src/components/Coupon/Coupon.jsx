@@ -2,7 +2,7 @@ import React from "react";
 
 const Coupon = () => {
   return (
-    <div className="coupon flex flex-col w-[23vw]">
+    <div className="coupon flex flex-col w-[23vw] max-sm:w-full max-md:w-[60vw] max-lg:w-[50vw] max-xl:w-[40vw]">
       <div className="title text-[#141718] font-pop text-xl font-medium">
         Have a coupon?
       </div>

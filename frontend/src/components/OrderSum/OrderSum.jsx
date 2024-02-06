@@ -1,7 +1,11 @@
 import React from "react";
 import DrawerItem from "../DrawerItem/DrawerItem";
-
-const OrderSum = ({ products }) => {
+import { useSelector } from "react-redux";
+const OrderSum = ({ cartItems }) => {
+  let total = 0;
+  for (const item of cartItems) total += item.price * item.amount;
+  const shippingOption = useSelector((state) => state.cart.shippingOption);
+  
   return (
     <div className="container max-sm:flex max-sm:items-center max-sm:justify-center max-md:flex max-md:items-center max-md:justify-center ">
       <div className="order border border-[#6C7275] px-6 py-4 max-sm:px-3  rounded-md inline-flex flex-col">
@@ -9,20 +13,23 @@ const OrderSum = ({ products }) => {
           Order summary
         </div>
         <div className="orders mt-4">
-          {products.map((product, index) => (
+          {cartItems.map((item, index) => (
             <div
               key={index}
               className={`order flex flex-col ${
-                index !== products.length - 1
+                index !== item.length - 1
                   ? "border-b border-[#E8ECEF]"
                   : "border-none"
               }`}
             >
               <DrawerItem
-                image={product.image}
-                title={product.title}
-                color={product.color}
-                price={product.price}
+                key={index}
+                productId={item.id}
+                image={item.selectedImage}
+                title={item.title}
+                color={item.color}
+                price={item.price}
+                Amount={item.amount}
                 p={7}
               />
             </div>
@@ -47,7 +54,7 @@ const OrderSum = ({ products }) => {
               <img src="/src/assets/ticket.png" alt="" />
             </div>
             <div className="name-coupon font-int text-base font-normal text-[#141718]">
-              JenkateMW
+              CatalinVoucher
             </div>
           </div>
           <div className="procents font-int text-base font-semibold text-[#38CB89]">
@@ -59,7 +66,11 @@ const OrderSum = ({ products }) => {
             Shipping
           </div>
           <div className="procents font-int text-base font-semibold text-[#141718]">
-            Free
+            {shippingOption === "option2"
+              ? "+$15.00$"
+              : shippingOption === "option3"
+              ? `+${(total * 0.15).toFixed(2)}$`
+              : "Free"}
           </div>
         </div>
         <div className=" mt-4 coupon py-3 border-b border-[#E8ECEF] flex items-center justify-between">
@@ -67,7 +78,7 @@ const OrderSum = ({ products }) => {
             Subtotal
           </div>
           <div className="procents font-int text-base font-semibold text-[#141718]">
-            $99.00
+            ${total.toFixed(2)}
           </div>
         </div>
         <div className=" mt-4 coupon py-3  flex items-center justify-between">
@@ -75,7 +86,11 @@ const OrderSum = ({ products }) => {
             Total
           </div>
           <div className="procentsfont-pop text-xl font-pop font-medium text-[#141718]">
-            $234.00
+            {shippingOption === "option2"
+              ? `$${(total + 15).toFixed(2)}`
+              : shippingOption === "option3"
+              ? `$${(total * 1.15).toFixed(2)}`
+              : `$${total.toFixed(2)}`}
           </div>
         </div>
       </div>

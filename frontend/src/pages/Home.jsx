@@ -45,79 +45,21 @@ const App = () => {
             <SplideSlide>
               <MiniCard
                 id={1}
-                product="Living Room"
-                image="/src/assets/sofa.png"
-                price={1200}
-                oldPrice={1700}
-                newTag
-              />
-            </SplideSlide>
-            <SplideSlide>
-              <MiniCard
-                id={1}
-                product="Living Room"
+                product={"Sofa"}
                 image="/src/assets/lamo.png"
-                price={1200}
-                oldPrice={1700}
+                price={1000}
+                oldPrice={1200}
+                rating={5}
               />
             </SplideSlide>
             <SplideSlide>
               <MiniCard
-                id={1}
-                product="Living Room"
-                image="/src/assets/sofa.png"
-                price={1200}
-                oldPrice={1700}
-                newTag
-              />
-            </SplideSlide>
-            <SplideSlide>
-              <MiniCard
-                id={1}
-                product="Living Room"
-                image="/src/assets/sofa.png"
-                price={1200}
-                oldPrice={1700}
-              />
-            </SplideSlide>
-            <SplideSlide>
-              <MiniCard
-                id={1}
-                product="Living Room"
-                image="/src/assets/sofa.png"
-                price={1200}
-                oldPrice={1700}
-                newTag
-              />
-            </SplideSlide>
-            <SplideSlide>
-              <MiniCard
-                id={1}
-                product="Living Room"
-                image="/src/assets/sofa.png"
-                price={1200}
-                oldPrice={1700}
-                newTag
-              />
-            </SplideSlide>
-            <SplideSlide>
-              <MiniCard
-                id={1}
-                product="Living Room"
-                image="/src/assets/sofa.png"
-                price={1200}
-                oldPrice={1700}
-                newTag
-              />
-            </SplideSlide>
-            <SplideSlide>
-              <MiniCard
-                id={1}
-                product="Living Room"
-                image="/src/assets/sofa.png"
-                price={1200}
-                oldPrice={1700}
-                newTag
+                id={2}
+                product={"Sofa"}
+                image="/src/assets/lamo.png"
+                price={1000}
+                oldPrice={1200}
+                rating={5}
               />
             </SplideSlide>
           </Splide>

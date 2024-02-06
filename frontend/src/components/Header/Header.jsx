@@ -1,6 +1,7 @@
 // libraries
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 // components
 import Notification from "../Notification/Notification";
 import Drawer from "../Drawer/Drawer";
@@ -25,7 +26,7 @@ const Header = () => {
   const closeDrawer = () => {
     setIsDrawerOpen(false);
   };
-
+  const cartItems = useSelector((state) => state.cart.cartItems);
   return (
     <div className="cont">
       {location.pathname !== "/cart" &&
@@ -107,7 +108,7 @@ const Header = () => {
             >
               <img src="\src\assets\shopping bag.svg" alt="Shopping Bag" />
               <div className="bullet w-5 h-5 bg-black text-white flex items-center justify-center rounded-full">
-                <div className="text font-int text-xs font-bold">0</div>
+                <div className="text font-int text-xs font-bold">{cartItems.length}</div>
               </div>
             </div>
           </div>

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import Quantity from "../Quantity/Quantity";
-
-import "@splidejs/react-splide/css";
-import "./Product.css";
+import { addToCart } from "../../features/cartSlice";
 
 const Product = ({
+  id,
   category,
   title,
   rating,
@@ -19,18 +19,20 @@ const Product = ({
   newTag = 0,
 }) => {
   const [isHeart, setHeart] = useState(0);
-
-  const toggle = (event) => {
-    event.preventDefault();
-    isHeart ? setHeart(0) : setHeart(1);
-  };
-
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [idt, setId] = useState(1);
   const [timeRemaining, setTimeRemaining] = useState({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0,
   });
+  const [error, setError] = useState("");
+  const toggle = (event) => {
+    event.preventDefault();
+    setHeart((prevHeart) => (prevHeart ? 0 : 1));
+  };
 
   const Stars = () => {
     const stars = [];
@@ -59,16 +61,39 @@ const Product = ({
     }, 1000);
     return () => clearInterval(intervalId);
   }, []);
-  const [selectedColor, setSelectedColor] = useState(null);
 
   const colorChange = (color) => {
     setSelectedColor(color);
+    setSelectedImage(imagesColors[color]);
   };
 
   const resetColor = () => {
     setSelectedColor(null);
   };
-
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const dispatch = useDispatch();
+  const addToCartHandler = () => {
+    if (!selectedColor) {
+      setError("Select a color before adding to cart");
+      return;
+    }
+    const product = {
+      id:idt,
+      category,
+      title,
+      price,
+      productCode,
+      selectedColor,
+      selectedImage,
+      amount,
+    };
+    setId(idt + 1);
+    dispatch(addToCart(product));
+  };
+  useEffect(() => {
+    console.log(cartItems);
+  }, [cartItems]);
+  const [amount, setAmount] = useState(1);
   return (
     <div className="product flex gap-16 max-sm:gap-10 max-md:gap-10 max-lg:gap-8 mt-3 my-10 max-sm:flex-wrap max-md:flex-wrap items-center justify-center  ">
       <div className="left  w-[35vw] max-lg:w-[60vw] max-xl:w-[50vw] max-2xl:w-[50vw] max-sm:w-full max-md:w-full  flex flex-col  object-cover items-center justify-center ">
@@ -226,7 +251,11 @@ const Product = ({
         <div className="product-cart flex flex-col gap-6 py-4 overflow-hidden">
           <div className="top flex items-center gap-6 max-sm:justify-between max-lg:justify-between max-xl:justify-between max-2xl:justify-between">
             <div className="amount">
-              <Quantity singleProd={1} />
+              <Quantity
+                singleProd={1}
+                amount={1}
+                onQuantityChange={setAmount}
+              />
             </div>
             <a
               href=""
@@ -249,10 +278,18 @@ const Product = ({
           </div>
           <div className="add-to-cart  ">
             <div className=" ">
-              <button className="bg-[#141718] max-sm:w-full  text-white font-int text-md font-medium rounded-lg py-3  max-lg:w-full max-xl:w-full max-2xl:w-full 2xl:w-[35.8rem]">
+              <button
+                onClick={addToCartHandler}
+                className="bg-[#141718] max-sm:w-full  text-white font-int text-md font-medium rounded-lg py-3  max-lg:w-full max-xl:w-full max-2xl:w-full 2xl:w-[35.8rem]"
+              >
                 Add to cart
               </button>
             </div>
+            {error && (
+              <p className="text-red-500 font-int text-md mt-2 font-medium">
+                {error}
+              </p>
+            )}
           </div>
         </div>
         <div className="codes flex items-center gap-14 py-3">

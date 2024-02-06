@@ -1,7 +1,13 @@
 import React from "react";
 import DrawerItem from "../DrawerItem/DrawerItem";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Drawer = ({ closeDrawer }) => {
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  console.log(cartItems);
+  let total = 0;
+  for (const item of cartItems) total += item.price * item.amount;
+
   return (
     <div className="drawer fixed top-0 right-0 h-full w-80 bg-white shadow z-10 py-14 px-6 ">
       <div className="header flex items-center justify-between">
@@ -16,48 +22,17 @@ const Drawer = ({ closeDrawer }) => {
       </div>
       <div className="flex flex-col justify-between h-full">
         <div className="cartItems overflow-y-auto flex-col items-center justify-center mt-4 z-10 overflow-hidden">
-          <DrawerItem
-            image="\src\assets\chair.png"
-            title="Tray Table"
-            color="Black"
-            price={20.99}
-          />
-          <DrawerItem
-            image="\src\assets\chair.png"
-            title="Tray Table"
-            color="Black"
-            price={20.99}
-          />
-          <DrawerItem
-            image="\src\assets\chair3.png"
-            title="Tray Table"
-            color="Black"
-            price={20.99}
-          />
-          <DrawerItem
-            image="\src\assets\chair3.png"
-            title="Tray Table"
-            color="Black"
-            price={20.99}
-          />
-          <DrawerItem
-            image="\src\assets\chair3.png"
-            title="Tray Table"
-            color="Black"
-            price={20.99}
-          />
-          <DrawerItem
-            image="\src\assets\chair3.png"
-            title="Tray Table"
-            color="Black"
-            price={20.99}
-          />
-          <DrawerItem
-            image="\src\assets\chair3.png"
-            title="Tray Table"
-            color="Black"
-            price={20.99}
-          />
+          {cartItems.map((item, index) => (
+            <DrawerItem
+              key={index}
+              productId={item.id}
+              image={item.selectedImage}
+              title={item.title}
+              color={item.selectedColor}
+              price={item.price}
+              Amount={item.amount}
+            />
+          ))}
         </div>
         <div className="footer z-20 pt-8">
           <div className="total flex items-center justify-between">
@@ -65,7 +40,7 @@ const Drawer = ({ closeDrawer }) => {
               Total
             </div>
             <div className="total-price text-[#141718] font-pop font-medium text-xl">
-              $234.00
+              ${total.toFixed(2)}
             </div>
           </div>
           <div className="checkout-btn-view flex flex-col gap-4 items-center justify-center mt-4">

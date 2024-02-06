@@ -3,8 +3,12 @@ import { Link } from "react-router-dom";
 import CartSum from "../components/CartSum/CartSum";
 import Coupon from "../components/Coupon/Coupon";
 import ProductsCart from "../components/ProductsCart/ProductsCart";
+import { useSelector } from "react-redux";
 
 const ViewCart = () => {
+  const cartItems = useSelector((state) => state.cart.cartItems);
+   let total = 0;
+  for (const item of cartItems) total += item.price * item.amount;
   return (
     <div className="viewcart mx-48 flex items-center justify-center max-sm:mx-4 max-md:mx-10 max-lg:mx-14 max-xl:mx-16 max-2xl:mx-[120px]">
       <div className="container  my-10 flex-col items-center justify-center gap-10 max-sm:gap-3  ">
@@ -42,32 +46,8 @@ const ViewCart = () => {
         </div>
 
         <div className="bag-and-sum flex py-20  max-md:gap-14 max-sm:flex-wrap max-lg:flex-wrap max-sm:gap-14 justify-center max-sm:py-12 md:gap-4 2xl:gap-24">
-          <ProductsCart
-            products={[
-              {
-                title: "Tray Table",
-                color: "Black",
-                price: 104,
-                quantity: 2,
-                image: "src/assets/chair.png",
-              },
-              {
-                title: "Tray Table",
-                color: "Black",
-                price: 100,
-                quantity: 1,
-                image: "src/assets/chair.png",
-              },
-              {
-                title: "Tray Table",
-                color: "Black",
-                price: 100,
-                quantity: 0,
-                image: "src/assets/chair.png",
-              },
-            ]}
-          />
-          <CartSum subtotal={100} />
+          <ProductsCart cartItems={cartItems} />
+          <CartSum subtotal={total} />
         </div>
         <Coupon />
       </div>

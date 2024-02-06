@@ -1,6 +1,11 @@
 import React from "react";
-
+import { useSelector } from "react-redux";
 const Success = () => {
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  let total = 0;
+  const payment = useSelector((state) => state.cart.paymentMethod);
+  console.log(payment);
+  for (const item of cartItems) total += item.price * item.amount;
   return (
     <div className="flex flex-col items-center justify-center gap-10 my-10">
       <div className="title text-black font-pop text-5xl ">Check Out</div>
@@ -48,21 +53,16 @@ const Success = () => {
           </div>
         </div>
         <div className="orders flex items-center justify-center flex-wrap gap-10 max-sm:gap-4">
-          <div className="img">
-            <img src="src/assets/chair2.png" alt="" />
-          </div>
-          <div className="img">
-            <img src="src/assets/chair1.png" alt="" />
-          </div>
-          <div className="img">
-            <img src="src/assets/chair1.png" alt="" />
-          </div>
-          <div className="img">
-            <img src="src/assets/chair1.png" alt="" />
-          </div>
-          <div className="img">
-            <img src="src/assets/chair1.png" alt="" />
-          </div>
+          {cartItems.map((item, index) => (
+            <div className="img w-24  object-cover">
+              <img
+              key={index}
+                src={item.selectedImage}
+                alt=""
+                className="w-24  object-cover"
+              />
+            </div>
+          ))}
         </div>
         <div className="description flex gap-10 ">
           <div className="col1 flex flex-col gap-5">
@@ -87,10 +87,10 @@ const Success = () => {
               October 19, 2023
             </div>
             <div className="text text-[#141718] font-int text-sm font-semibold">
-              $1,345.00
+              ${total.toFixed(2)}
             </div>
             <div className="text text-[#141718] font-int text-sm font-semibold">
-              Credit Card
+              {payment}
             </div>
           </div>
         </div>

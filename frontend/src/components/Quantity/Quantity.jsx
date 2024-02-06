@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const Quantity = ({ singleProd = 0, amount = 0 }) => {
+const Quantity = ({ singleProd = 0, amount = 0, onQuantityChange }) => {
   const [Amount, setAmount] = useState(amount);
 
   const increment = () => {
@@ -8,14 +8,18 @@ const Quantity = ({ singleProd = 0, amount = 0 }) => {
   };
 
   const decrement = () => {
-    if (Amount > 0) {
-      setAmount(Amount - 1);
-    }
+    if (Amount > 0) setAmount(Amount - 1);
   };
+
+  useEffect(() => {
+    if (typeof onQuantityChange === "function") {
+      onQuantityChange(Amount);
+    }
+  }, [Amount, onQuantityChange]);
 
   return (
     <div
-      className={`quantity inline-flex rounded items-center border   ${
+      className={`quantity inline-flex rounded items-center border max-sm:px-0.5 py-0   ${
         singleProd === 1
           ? "py-2 px-4 border-none bg-[#F5F5F5]"
           : "px-2 py-0.5 border-[#6C7275]"
@@ -27,8 +31,8 @@ const Quantity = ({ singleProd = 0, amount = 0 }) => {
         </button>
       </div>
       <div
-        className={`amount  text-[#121212] text-center text-sm font-semibold font-int ${
-          singleProd === 1 ? "mx-5" : "mx-3"
+        className={`amount  text-[#121212] text-center text-[14px] font-semibold font-int ${
+          singleProd === 1 ? "mx-5" : "mx-2"
         }`}
       >
         {Amount}
