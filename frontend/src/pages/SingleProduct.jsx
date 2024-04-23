@@ -1,10 +1,12 @@
 import React from "react";
 import Product from "../components/Product/Product";
 import MiniCard from "../components/MiniCard/MiniCard";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Newsletter from "../components/Newsletter/Newsletter";
 const SingleProduct = () => {
+  const { id } = useParams();
+  console.log(id);
   return (
     <div className="single  flex flex-col gap-2">
       <div className="header mx-48 flex items-center py-4 gap-4 max-sm:mx-4 max-md:mx-10 max-lg:mx-14 max-xl:mx-16 max-2xl:mx-[120px]">
@@ -22,11 +24,12 @@ const SingleProduct = () => {
       </div>
       <div className="product mx-48 max-sm:mx-4 max-md:mx-10 max-lg:mx-14 max-xl:mx-16 max-2xl:mx-[120px]">
         <Product
-          id={1}
+          id={id}
           price={1000}
           oldPrice="1050"
           measurements="17 1/2x20 5/8 "
           title="Tray Table"
+          rating={3}
           newTag
           images={[
             "/src/assets/chair.png",

@@ -45,7 +45,7 @@ const App = () => {
             <SplideSlide>
               <MiniCard
                 id={1}
-                product={"Sofa"}
+                product="Tray Table"
                 image="/src/assets/lamo.png"
                 price={1000}
                 oldPrice={1200}
@@ -55,7 +55,7 @@ const App = () => {
             <SplideSlide>
               <MiniCard
                 id={2}
-                product={"Sofa"}
+                product="Tray Table"
                 image="/src/assets/lamo.png"
                 price={1000}
                 oldPrice={1200}

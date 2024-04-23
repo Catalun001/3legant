@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart } from "../../features/cartSlice";
+// import { useDispatch, useSelector } from "react-redux";
+// import { addToCart, removeFromCart } from "../../features/cartSlice";
 
 const MiniCard = ({
   product,

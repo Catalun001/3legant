@@ -17,9 +17,9 @@ const OrderSum = ({ cartItems }) => {
             <div
               key={index}
               className={`order flex flex-col ${
-                index !== item.length - 1
-                  ? "border-b border-[#E8ECEF]"
-                  : "border-none"
+                index !== item.length 
+                  ? "border-t border-[#E8ECEF]"
+                  : "border border-none"
               }`}
             >
               <DrawerItem
